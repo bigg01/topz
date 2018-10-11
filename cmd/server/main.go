@@ -14,7 +14,8 @@ func main() {
 	bindHttp := os.Getenv("TOPZ_BIND")
 	if bindHttp == "" {
 		bindHttp = "localhost:8080"
-		log.Printf("environment variable bindHttp not set using default: %v\n", bindHttp)
+		log.Printf("environment variable TOPZ_BIND not set using default: %v\n", bindHttp)
 	}
+	log.Printf("Starting ... : %v\n", bindHttp)
 	log.Fatal(http.ListenAndServe(bindHttp, nil))
 }
