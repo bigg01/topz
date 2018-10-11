@@ -17,7 +17,7 @@ RUN go get -v ./... && \
 FROM scratch
 
 
-#EXPOSE 8080
+EXPOSE 8080
 # Since we started from scratch, we'll copy the SSL root certificates from the builder
 WORKDIR /usr/local/bin
 
