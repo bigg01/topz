@@ -8,7 +8,8 @@ WORKDIR /go/src/topz
 
 RUN apk --no-cache add ca-certificates git
 
-ADD pkg cmd  /go/src/topz/
+COPY pkg  /go/src/topz/pkg
+COPY cmd  /go/src/topz/cmd
 RUN go get -v ./... && \
     cd /go/src/topz/cmd/server && \
     CGO_ENABLED=0 GOOS=linux go build -v -a -installsuffix cgo -o topz .
