@@ -1,4 +1,4 @@
-FROM golang:1.11.1-alpine AS builder
+FROM golang:1.16.3-alpine AS builder
 WORKDIR /go/src/topz
 RUN apk --no-cache add ca-certificates git upx
 
